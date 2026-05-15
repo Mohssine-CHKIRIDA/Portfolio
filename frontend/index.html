@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohssine CHKIRIDA — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav>
+    <div class="nav-brand">
+      <span class="prompt">~/portfolio</span>
+      <span class="prompt-dollar">$</span>
+      <span class="prompt-name">mohssine</span>
+      <div class="cursor"></div>
+    </div>
+    <div class="nav-links">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#ai">Ask AI</a>
+    </div>
+  </nav>
+
+  <!-- ═══ STATUS BAR ═══ -->
+  <div class="status-bar">
+    <div class="status-item"><div class="status-dot"></div><span>main — deployed</span></div>
+    <span class="status-sep">│</span>
+    <div class="status-item">✓ build passing</div>
+    <span class="status-sep">│</span>
+    <div class="status-item">INPT · Rabat, Morocco</div>
+    <span class="status-sep">│</span>
+    <div class="status-item">🔍 open to internship (PFA)</div>
+    <span class="status-sep">│</span>
+    <div class="status-item" style="margin-left:auto"><span id="live-time"></span></div>
+  </div>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <div id="hero">
+      <div class="hero-pipeline">
+        <div class="pipeline-step done"><div class="step-dot"></div>education</div>
+        <span class="pipe-arrow">›</span>
+        <div class="pipeline-step done"><div class="step-dot"></div>internship</div>
+        <span class="pipe-arrow">›</span>
+        <div class="pipeline-step active"><div class="step-dot"></div>building</div>
+        <span class="pipe-arrow">›</span>
+        <div class="pipeline-step wait"><div class="step-dot"></div>hiring</div>
+      </div>
+
+      <div class="hero-tag"><span>//</span> software engineer · devops · ai systems</div>
+      <h1>Mohssine<br><span class="teal">CHKIRIDA</span><br><span class="dim">v2.0-dev</span></h1>
+      <p class="hero-subtitle">2nd-year Software Engineering student @ INPT<br>Building AI-powered products &amp; DevOps pipelines</p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">📍 Rabat, Morocco</div>
+        <div class="hero-meta-item">📧 <a href="mailto:mhsnchkirida@gmail.com">mhsnchkirida@gmail.com</a></div>
+        <div class="hero-meta-item">⚡ <a href="https://github.com/Mohssine-CHKIRIDA" target="_blank">github.com/Mohssine-CHKIRIDA</a></div>
+        <div class="hero-meta-item">🧩 <a href="https://leetcode.com/u/Msh_x/" target="_blank">LeetCode: MhsnCH</a></div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#ai" class="btn-primary">⚡ Ask my AI twin</a>
+        <a href="#timeline" class="btn-secondary">View git history</a>
+        <a href="https://github.com/Mohssine-CHKIRIDA" target="_blank" class="btn-secondary">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- ═══ CI/CD PIPELINE ═══ -->
+    <div id="pipeline" class="section-dark">
+      <section>
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2 class="section-title">CI/CD Pipeline</h2>
+          <div class="section-line"></div>
+          <span class="section-meta">live run #<span id="build-number">47</span></span>
+        </div>
+
+        <div class="pipeline-visual">
+          <div class="pipeline-stage" id="stage-push" data-status="done">
+            <div class="stage-status"><span class="status-icon">✓</span> passed</div>
+            <div class="stage-name">code push</div>
+            <div class="stage-detail">main ← feature/agileai-sprint-2<br>3 files changed, +182 −44</div>
+            <div class="stage-progress"><div class="stage-progress-bar" style="width:100%"></div></div>
+            <div class="stage-time">2s · triggered 4min ago</div>
+          </div>
+
+          <div class="pipeline-stage" id="stage-precommit" data-status="done">
+            <div class="stage-status"><span class="status-icon">✓</span> passed</div>
+            <div class="stage-name">pre-commit</div>
+            <div class="stage-detail">lint · format · secret scan<br>SAST hooks clean</div>
+            <div class="stage-progress"><div class="stage-progress-bar" style="width:100%"></div></div>
+            <div class="stage-time">8s</div>
+          </div>
+
+          <div class="pipeline-stage" id="stage-build" data-status="done">
+            <div class="stage-status"><span class="status-icon">✓</span> passed</div>
+            <div class="stage-name">build &amp; test</div>
+            <div class="stage-detail">Docker build · unit tests<br>coverage 87% ↑</div>
+            <div class="stage-progress"><div class="stage-progress-bar" style="width:100%"></div></div>
+            <div class="stage-time">1m 12s</div>
+          </div>
+
+          <div class="pipeline-stage" id="stage-sast" data-status="running">
+            <div class="stage-status"><span class="status-icon">⟳</span> running</div>
+            <div class="stage-name">SAST / DAST</div>
+            <div class="stage-detail">Trivy scan · OWASP ZAP<br>0 critical found so far</div>
+            <div class="stage-progress"><div class="stage-progress-bar" id="sast-bar" style="width:60%"></div></div>
+            <div class="stage-time" id="sast-time">~40s remaining</div>
+          </div>
+
+          <div class="pipeline-stage" id="stage-deploy" data-status="wait">
+            <div class="stage-status"><span class="status-icon">○</span> waiting</div>
+            <div class="stage-name">deploy</div>
+            <div class="stage-detail">Argo CD · Kubernetes<br>GitOps rollout</div>
+            <div class="stage-progress"><div class="stage-progress-bar" id="deploy-bar" style="width:0%"></div></div>
+            <div class="stage-time">—</div>
+          </div>
+        </div>
+
+        <div class="log-stream" id="log-stream">
+          <div class="log-line"><span class="log-time">04:12:01</span><span class="log-ok">[✓] pre-commit hooks passed (lint, gitleaks)</span></div>
+          <div class="log-line"><span class="log-time">04:12:09</span><span class="log-info">[→] Building Docker image mohssine/agileai:sha-3f8a2c1</span></div>
+          <div class="log-line"><span class="log-time">04:13:02</span><span class="log-ok">[✓] 24 unit tests passed · coverage 87%</span></div>
+          <div class="log-line"><span class="log-time">04:13:21</span><span class="log-run">[~] Running Trivy container scan...</span></div>
+          <div class="log-line"><span class="log-time">04:13:38</span><span class="log-info">    0 CRITICAL · 2 MEDIUM · 5 LOW</span></div>
+          <div class="log-line"><span class="log-time">04:13:45</span><span class="log-run">[~] DAST: OWASP ZAP scanning endpoints...</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══ GIT TIMELINE ═══ -->
+    <section id="timeline">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Git history</h2>
+        <div class="section-line"></div>
+        <span class="section-meta">git log --all --oneline</span>
+      </div>
+
+      <div class="git-timeline">
+
+        <div class="git-node">
+          <div class="git-dot current"><div class="git-dot-inner"></div></div>
+          <div class="git-tag">v2.0-dev · HEAD</div>
+          <div class="git-node-title">AgileAI — AI-Powered Agile Platform</div>
+          <div class="git-node-desc">Building a SaaS Agile management platform combining Scrum, Kanban and AI agents to automate task management and orchestrate dev workflows. LangGraph-powered recommendation engine in progress.</div>
+          <div class="git-pills">
+            <span class="git-tech-pill">React</span><span class="git-tech-pill">Spring Boot</span>
+            <span class="git-tech-pill">LangGraph</span><span class="git-tech-pill">Gemini API</span>
+            <span class="git-tech-pill">PostgreSQL</span>
+          </div>
+          <div class="git-meta"><span>⟳ In progress</span><span>📁 SaaS · AI · Agile</span></div>
+        </div>
+
+        <div class="git-node">
+          <div class="git-dot major"><div class="git-dot-inner"></div></div>
+          <div class="git-tag">v1.5 · 2025</div>
+          <div class="git-node-title">DevOps PoC — Full CI/CD Pipeline</div>
+          <div class="git-node-desc">End-to-end DevOps pipeline on a 3-tier app: GitLab CI, Docker, Kubernetes manifests, GitOps via Argo CD, SAST/DAST scanning, and pre-commit hooks.</div>
+          <div class="git-pills">
+            <span class="git-tech-pill">Docker</span><span class="git-tech-pill">GitLab CI/CD</span>
+            <span class="git-tech-pill">Argo CD</span><span class="git-tech-pill">Minikube</span>
+            <span class="git-tech-pill">SAST/DAST</span>
+          </div>
+          <div class="git-meta">
+            <span>✓ Shipped</span>
+            <span>🔗 <a href="https://gitlab.com/mohssine-chkirida-group/travelo.git" target="_blank">View project ↗</a></span>
+          </div>
+        </div>
+
+        <div class="git-node">
+          <div class="git-dot major"><div class="git-dot-inner"></div></div>
+          <div class="git-tag">v1.3 · 2025</div>
+          <div class="git-node-title">B2Blink Internship — SmartAlert Platform</div>
+          <div class="git-node-desc">First professional experience: upgraded SmartAlert's web platform, implemented OAuth2 and JWT authentication, added i18n multilingual support.</div>
+          <div class="git-pills">
+            <span class="git-tech-pill">ReactJS</span><span class="git-tech-pill">Spring Boot</span>
+            <span class="git-tech-pill">SCSS</span><span class="git-tech-pill">JWT</span>
+            <span class="git-tech-pill">OAuth2</span><span class="git-tech-pill">i18n</span>
+          </div>
+          <div class="git-meta">
+            <span>✓ Delivered</span>
+            <span>🌐 <a href="https://smartalert.ma" target="_blank">smartalert.ma ↗</a></span>
+          </div>
+        </div>
+
+        <div class="git-node">
+          <div class="git-dot"><div class="git-dot-inner"></div></div>
+          <div class="git-tag minor">v1.1 · 2024</div>
+          <div class="git-node-title">E-commerce Platform — Full Stack</div>
+          <div class="git-node-desc">Full-stack e-commerce with product catalogue, cart, secure payments and admin panel. TypeScript throughout, clean architecture, JWT auth.</div>
+          <div class="git-pills">
+            <span class="git-tech-pill">React</span><span class="git-tech-pill">TypeScript</span>
+            <span class="git-tech-pill">Redux</span><span class="git-tech-pill">Node.js</span>
+            <span class="git-tech-pill">PostgreSQL</span>
+          </div>
+          <div class="git-meta">
+            <span>✓ Shipped</span>
+            <span>🔗 <a href="https://github.com/Mohssine-CHKIRIDA/E-commerce_Website" target="_blank">GitHub ↗</a></span>
+          </div>
+        </div>
+
+        <div class="git-node">
+          <div class="git-dot"><div class="git-dot-inner"></div></div>
+          <div class="git-tag minor">v1.0 · 2024</div>
+          <div class="git-node-title">INPT — Software Engineering cycle begins</div>
+          <div class="git-node-desc">Admitted to INPT, specialising in software engineering and DevOps. After 2 years of CPGE prep (Math &amp; Physics, Ibn Timiya, Marrakech).</div>
+          <div class="git-meta"><span>🎓 INPT · Rabat</span><span>📍 After CPGE 2022–2024</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <div class="section-dark">
+      <section id="projects">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Projects</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">AgileAI</div>
+              <div class="project-status wip">in progress</div>
+            </div>
+            <div class="project-desc">AI-powered Agile management SaaS. Scrum + Kanban + LangGraph agents that recommend sprint actions and orchestrate dev workflows.</div>
+            <div class="project-tech">
+              <span class="git-tech-pill">React</span><span class="git-tech-pill">Spring Boot</span>
+              <span class="git-tech-pill">LangGraph</span><span class="git-tech-pill">Gemini API</span>
+              <span class="git-tech-pill">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">DevOps PoC</div>
+              <div class="project-status done">shipped</div>
+            </div>
+            <div class="project-desc">Complete CI/CD pipeline: GitLab CI, Docker, Kubernetes, Argo CD (GitOps), SAST/DAST scanning — all on a production 3-tier app.</div>
+            <div class="project-tech">
+              <span class="git-tech-pill">Docker</span><span class="git-tech-pill">GitLab CI/CD</span>
+              <span class="git-tech-pill">Kubernetes</span><span class="git-tech-pill">Argo CD</span>
+            </div>
+            <a href="https://gitlab.com/mohssine-chkirida-group/travelo.git" target="_blank" class="project-link">View on GitLab ↗</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">E-commerce Platform</div>
+              <div class="project-status done">shipped</div>
+            </div>
+            <div class="project-desc">Full-stack e-commerce with product catalogue, cart, payments, admin dashboard. TypeScript, JWT auth, clean architecture.</div>
+            <div class="project-tech">
+              <span class="git-tech-pill">React + TS</span><span class="git-tech-pill">Redux</span>
+              <span class="git-tech-pill">Node.js</span><span class="git-tech-pill">PostgreSQL</span>
+            </div>
+            <a href="https://github.com/Mohssine-CHKIRIDA/E-commerce_Website" target="_blank" class="project-link">View on GitHub ↗</a>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Tech stack</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group"><div class="skill-group-name">Languages</div><div class="skill-tags"><span class="skill-tag">Java</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Python</span></div></div>
+        <div class="skill-group"><div class="skill-group-name">Frontend</div><div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">Tailwind</span></div></div>
+        <div class="skill-group"><div class="skill-group-name">Backend</div><div class="skill-tags"><span class="skill-tag">Spring Boot</span><span class="skill-tag">Node.js</span><span class="skill-tag">Express</span><span class="skill-tag">GraphQL</span><span class="skill-tag">Prisma</span></div></div>
+        <div class="skill-group"><div class="skill-group-name">DevOps</div><div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">GitLab CI/CD</span><span class="skill-tag">Argo CD</span></div></div>
+        <div class="skill-group"><div class="skill-group-name">Databases</div><div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span></div></div>
+        <div class="skill-group"><div class="skill-group-name">AI / Tools</div><div class="skill-tags"><span class="skill-tag">LangGraph</span><span class="skill-tag">Gemini API</span><span class="skill-tag">Git</span><span class="skill-tag">Postman</span></div></div>
+      </div>
+      <div class="skills-extras">
+        <div class="skill-extra-card"><div class="skill-group-name">Languages spoken</div><div class="skill-extra-list"><div>🇲🇦 Arabic — native</div><div>🇫🇷 French — fluent</div><div>🇬🇧 English — B2 (TOEIC)</div><div>🇪🇸 Spanish — beginner</div></div></div>
+        <div class="skill-extra-card"><div class="skill-group-name">Extracurricular</div><div class="skill-extra-list"><div>🏛 BDE — Student committee lead</div><div>📊 Club A2S — HR cell lead</div><div>💻 CIT — Web cell co-lead</div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ AI CHAT ═══ -->
+    <div class="section-dark" id="ai">
+      <section>
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Ask my AI twin</h2>
+          <div class="section-line"></div>
+          <span class="section-meta teal">powered by Me</span>
+        </div>
+        <p class="chat-intro">This AI knows my resume, projects, and engineering philosophy. Ask anything a recruiter or collaborator would want to know.</p>
+
+        <div class="chat-container">
+          <div class="chat-topbar">
+            <div class="chat-topbar-dot red"></div>
+            <div class="chat-topbar-dot yellow"></div>
+            <div class="chat-topbar-dot green"></div>
+            <span class="chat-topbar-title">mohssine-ai.chat</span>
+            <div class="chat-model-badge">its just me talking with you </div>
+          </div>
+
+          <div class="chat-messages" id="chat-messages">
+            <div class="msg ai">
+              <div class="msg-avatar ai">MC</div>
+              <div class="msg-bubble">Hey! I'm Mohssine's AI twin. I know his full background — projects, stack, DevOps work, everything. Ask me anything: what he's built, why he's interesting to hire, or how he'd approach a problem. 🚀</div>
+            </div>
+          </div>
+
+          <div class="chat-suggestions" id="suggestions">
+            <button class="suggest-btn" data-msg="What's your strongest skill?">What's your strongest skill?</button>
+            <button class="suggest-btn" data-msg="Walk me through your DevOps PoC">Walk me through your DevOps PoC</button>
+            <button class="suggest-btn" data-msg="Why should we hire you?">Why should we hire you?</button>
+            <button class="suggest-btn" data-msg="What's AgileAI?">What's AgileAI?</button>
+            <button class="suggest-btn" data-msg="What are you looking for?">What are you looking for?</button>
+          </div>
+
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Ask me anything about Mohssine..." />
+            <button class="chat-send-btn" id="chat-send">send →</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p><a href="mailto:mhsnchkirida@gmail.com">mhsnchkirida@gmail.com</a> · <a href="https://github.com/Mohssine-CHKIRIDA" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/mohssine-chkirida-3b318b224" target="_blank">LinkedIn</a></p>
+    <p>Mohssine CHKIRIDA · INPT · Rabat, Morocco · Open to internship (PFA)</p>
+    <p class="footer-sub">built with AI · git-driven · shipped via CI/CD</p>
+  </footer>
+
+  <!-- Scripts loaded at end of body -->
+  <script src="pipeline.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
